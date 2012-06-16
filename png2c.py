@@ -46,8 +46,8 @@ for line in bitmap:
 char_bitmaps = [] 
 for c in range(256): # for each character
     char_bitmap = []
-    raster_row = (c / char_size[1]) * char_size[1]
-    offset = (c % char_size[1]) * char_size[0]
+    raster_row = (c / 16) * char_size[1]
+    offset = (c % 16) * char_size[0]
     for y in range(char_size[1]): # for each scan line of the character
         char_bitmap.append(raster[raster_row + y][offset : offset + char_size[0]])
     char_bitmaps.append(char_bitmap)
